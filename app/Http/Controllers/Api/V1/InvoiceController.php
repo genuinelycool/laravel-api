@@ -18,10 +18,6 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     return new InvoiceCollection(Invoice::paginate());
-    // }
 
     public function index(Request $request)
     {
@@ -31,9 +27,8 @@ class InvoiceController extends Controller
         if (count($queryItems) == 0) {
             return new InvoiceCollection(Invoice::paginate());
         } else {
-            // return new InvoiceCollection(Invoice::where($queryItems)->paginate());
-
             $invoices = Invoice::where($queryItems)->paginate();
+            
             return new InvoiceCollection($invoices->appends($request->query()));
 
         }
