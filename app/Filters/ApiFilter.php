@@ -1,11 +1,9 @@
 <?php
 
-// namespace App\Services\V1;
 namespace App\Filters;
 
 use Illuminate\Http\Request;
 
-// class CustomerQuery {
 class ApiFilter {
     protected $safeParams = [];
 
